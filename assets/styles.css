@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(212, 212, 212);
+}
+
+a{
+    text-decoration: none  
+}
+
+.nav{
+    display: flex;
+    margin: auto;
+    padding: 20px;
+    width: 85%;
+    justify-content: space-between;
+}
+
+.nav ul{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    list-style: none;
+}
+.nav ul li a{
+    font-size: 20px;
+    color: black;
+}
+
+.container {
+  background-color: rgb(248, 248, 248);
+  margin: 140px auto;
+  width: 85%;
+  height: 60%;
+  box-shadow: 0 0 8px 2px gray;
+  border-radius: 10px;
+}
+
+.card {
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  width: 80%;
+  padding: 50px;
+}
+
+.left {
+  width: 75%;
+  margin: 20px;
+}
+
+.right {
+  width: 40%;
+  margin: 20px;
+}
+
+.card-img {
+  width: 300px;
+  height: auto;
+  box-shadow: 0 0 8px 2px gray;
+  border-radius: 10px;
+}
+
+.card-img img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  text-align: center;
+  padding: 5px;
+}
+.card-body p{
+  padding-bottom: 10px;
+}
+
+.skills {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.buttons{
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+  gap: 20px;
+}
+.button {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.social{
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  gap: 20px;
+}
