@@ -38,24 +38,24 @@
             </h1>
             <div class="input">
                 <label for="name">Nama</label>
-                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Name" id="name">
             </div>
             <div class="input">
                 <label for="email">Email</label>
-                <input type="email" placeholder="Email">
+                <input type="email" placeholder="Email" id="email">
             </div>
             <div class="input">
                 <label for="phone">Phone Number</label>
-                <input type="text" placeholder="Phone Number">
+                <input type="text" placeholder="Phone Number" id="phone">
             </div>
             <div class="input">
                 <label for="phone">Subject</label>
                 <select name="subject" id="subject" style="width: 470px; height: 40px; background-color: #fff; margin-top: 5px; padding: 10px; border: none; border: none;
                 border-radius: 5px;
                 box-shadow: 1px 2px 6px rgb(180, 180, 180);">
-                    <option value="1">Let's Connect</option>
-                    <option value="2">Let's Collaborate</option>
-                    <option value="2">Let's Talk</option>
+                    <option value="Let's Connect">Let's Connect</option>
+                    <option value="Let's Collaborate">Let's Collaborate</option>
+                    <option value="Let's Talk">Let's Talk</option>
                 </select>
             </div>
             <div class="input">
@@ -65,11 +65,13 @@
                 box-shadow: 1px 2px 6px rgb(180, 180, 180);"></textarea>      
             </div>
             <div style="margin-left: 350px;">
-                <button class="button">
+                <button onclick="formSubmit(event)" class="button">
                     Submit
                 </button>
             </div>
         </div>  
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
