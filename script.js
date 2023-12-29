@@ -1,4 +1,4 @@
-function formSubmit(event){
+function formSubmit(event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value;
@@ -7,14 +7,12 @@ function formSubmit(event){
     const subject = document.getElementById("subject").value;
     const message = document.getElementById("message").value;
 
-    if (name == "" || email == "" || phone == "" || subject == "" || message == ""){
+    if (name == "" || email == "" || phone == "" || subject == "" || message == "") {
         alert("Masukan semua data");
+    } else {
+        let a = document.createElement('a');
+        a.href = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=alamsaungnaga@gmail.com&su=${subject}&body=${encodeURI(message + '\n\nHormat saya, \nNama:' + name + '\nEmail:' + email + '\nNo:' + phone)}`;
+        a.target = '_blank';
+        a.click();
     }
-
-    let a = document.createElement('a');
-
-    a.href = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=alamsaungnaga@gmail.com&su=${subject}&body=${encodeURI(message + '\n\nHormat saya, \nNama:' + name + '\nEmail:' + email + '\nNo:' + phone)}`;
-
-    a.target = '_blank';
-    a.click();
 }
