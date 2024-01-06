@@ -7,28 +7,6 @@ body {
   background-color: rgb(212, 212, 212);
 }
 
-a{
-    text-decoration: none  
-}
-
-.nav{
-    display: flex;
-    margin: auto;
-    padding: 20px;
-    width: 85%;
-    justify-content: space-between;
-}
-
-.nav ul{
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    list-style: none;
-}
-.nav ul li a{
-    font-size: 20px;
-    color: black;
-}
 
 .container {
   background-color: rgb(248, 248, 248);

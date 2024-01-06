@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/project.css">
+    <link rel="stylesheet" href="./assets/nav.css">
+    <title>Contact</title>
+</head>
+<body>
+    <div style="background-color:rgb(248, 248, 248);">
+        <nav class="nav">
+          <ul>
+            <a
+            href="index.html"
+            >
+              <img
+                src="./assets/icon/du.png"
+                alt="download"
+                width="45px"
+                height="40px"
+              />
+            </a>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="project.html" style="font-weight: bold;">My Project</a></li>
+          </ul>
+          <a href="form.html">
+            <button class="button">
+              Contact
+            </button>
+          </a>  
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="card" style="background-color: #d4d4d4">
+            <h1>
+                ADD MY PROJECT
+            </h1>
+            <form onsubmit="addProject(event)">
+                <div class="input">
+                    <label for="name">Project Name</label>
+                    <input id="name" type="text" placeholder="Name" id="name">
+                </div>
+                <div class="form-input">
+                    <div class="input input-date">
+                        <label for="start-date">Start Date</label>
+                        <input id="start-date" type="date" placeholder="Start Date" id="start-date">
+                    </div>
+                    <div class="input input-date">
+                        <label for="end-date">End Date</label>
+                        <input id="end-date" type="date" placeholder="End Date" id="end-date">
+                    </div>
+                </div>
+                
+                <div class="input">
+                    <label for="phone">Description</label>
+                    <textarea name="desc" id="desc" style="width: 450px; height: 100px; margin-top: 5px; padding: 10px; border: none;
+                    border-radius: 5px;
+                    box-shadow: 1px 2px 6px rgb(180, 180, 180);"></textarea>      
+                </div>
+                
+                <div class="input-check">
+                    <label for="technologies">Technologies</label>
+                    <div class="checkbox-form">
+                        <div class="item-check">
+                            <div>
+                                <input type="checkbox" id="html" name="technologies" value="html">
+                                <label for="html">HTML</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="react" name="technologies" value="react">
+                                <label for="react">React JS</label>
+                            </div>
+                        </div>
+                        <div class="item-check">
+                            <div>
+                                <input type="checkbox" id="css" name="technologies" value="css">
+                                <label for="css">CSS</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="javascript" name="technologies" value="javascript">
+                                <label for="javascript">JavaScript</label>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+                <div class="input">
+                    <label for="upload-image">Upload Image</label>
+                    <input style="background-color: #fff;" type="file" id="upload-image" name="upload-image">
+                </div>
+                
+                <div style="margin-left: 350px; margin-top: 10px;">
+                    <button class="button">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div> 
+        
+        <div style="background-color:rgb(248, 248, 248);" id="contents">
+            <div class="card">
+                <h1>My Project</h1>
+            </div>
+            <div id="project-content" class="list-project">
+                <!-- dynamic content -->
+                <!-- <div class="card-project">
+                    <div>
+                        <img src="./assets/icon/du.png" alt="download" width="300px" height="250px">
+                    </div>
+                    <div>
+                        <h3>Title</h3>
+                        <p>Durasi</p>
+                        <div style="margin-top: 10px;">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse eveniet blanditiis omnis nostrum quasi, veniam nihil impedit! Repellat, iusto laborum ullam at esse natus fuga id explicabo quaerat consequatur nostrum.</p>
+                        </div>
+                        <div class="technologies">
+                            <p>Technologies: HTML, CSS, JavaScript</p>
+                        </div>
+                    </div>
+                    <div class="button-project" >
+                        <button class="button">Edit</button>
+                        <button class="button">Delete</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/project.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>
