@@ -40,8 +40,26 @@ function addProject(e){
 function renderProjects(){
 
     let html = '';
+     
 
     for (let i = 0; i < projects.length; i++){
+
+        const startDate = new Date(projects[i].startDate);
+        const endDate = new Date(projects[i].endDate);
+
+        const durationInDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+        const durationInWeeks = Math.floor(durationInDays / 7);
+        const durationInMonths = Math.floor(durationInDays / 30); 
+
+        let durationText;
+
+        if (durationInMonths > 0) {
+            durationText = `${durationInMonths} Bulan`;
+        } else if (durationInWeeks > 0) {
+            durationText = `${durationInWeeks} Minggu`;
+        } else {
+            durationText = `${durationInDays} Hari`;
+        }
 
         const icon = projects[i].tech.map(tech => {
             switch (tech){
@@ -65,7 +83,7 @@ function renderProjects(){
                             </div>
                             <div>
                                 <h3><a href="detail-project.html">${projects[i].name}</a></h3>
-                                <p style="margin-top: 8px;">${projects[i].startDate} - ${projects[i].endDate}</p>
+                                <p style="margin-top: 8px;">Durasi: ${durationText}</p>
                                 <div style="margin-top: 10px;">
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse eveniet blanditiis omnis nostrum quasi, veniam nihil impedit! Repellat, iusto laborum ullam at esse natus fuga id explicabo quaerat consequatur nostrum.</p>
                                 </div>
