@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/testimoni.css">
+    <link rel="stylesheet" href="./assets/nav.css">
+    <title>Testimoni</title>
+</head>
+<body>
+    <div style="background-color:rgb(248, 248, 248);">
+        <nav class="nav">
+            <ul>
+              <a
+              href="#"
+              target="_blank"
+              >
+                <img
+                  src="./assets/icon/du.png"
+                  alt="download"
+                  width="45px"
+                  height="40px"
+                />
+              </a>
+              <li class="list-item"><a href="index.html" >Home</a></li>
+              <li class="list-item"><a href="project.html">My Project</a></li>
+              <li class="list-item"><a href="#" style="font-weight: bold;">Testimonial</a></li>
+            </ul>
+            <a href="form.html">
+              <button class="button-contact">
+                Contact
+              </button>
+            </a>  
+              <i class="fa-solid fa-bars fa-2x" style="cursor: pointer;" id="hamburger-button" onclick="openHamburger()"></i> 
+          </nav>
+
+          <div id="hamburger-navbar-container" class="hamburger-navbar-container hidden">
+            <a class="hamburger-navbar-link" href="index.html">Home</a>
+            <a class="hamburger-navbar-link" href="project.html">My Project</a>
+            <a class="hamburger-navbar-link" style="background-color: orangered;" href="#">Testimonial</a>
+            <a class="hamburger-navbar-link" href="form.html">Contact</a>
+          </div>
+    </div>
+
+    <div class="container">
+        <div style="background-color: #d4d4d4" id="contents">
+            <div class="card">
+                <h1>Testimoni</h1>
+            </div>
+            <div id="testimonials"  class="list-project">
+                <!-- dynamic content -->
+
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/nav.js"></script>
+    <script src="./assets/js/testimoni.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>
