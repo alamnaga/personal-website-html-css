@@ -36,7 +36,7 @@ body {
 }
 
 .card-img {
-  width: 300px;
+  width: 280px;
   height: auto;
   box-shadow: 0 0 8px 2px gray;
   border-radius: 10px;
@@ -77,10 +77,41 @@ body {
   padding: 10px 20px;
   cursor: pointer;
 }
+.button-contact {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
 .social{
   display: flex;
   align-items: center;
   padding-top: 20px;
   gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+  .left {
+    width: 90%;
+    margin: 0;
+  }
+  .right {
+    width: 80%;
+    margin: 0;
+  }
+  
+  .card-img {
+    width: 240px;
+    height: auto;
+    box-shadow: 0 0 8px 2px gray;
+    border-radius: 10px;
+  }
+  
 }

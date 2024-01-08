@@ -47,7 +47,6 @@ a {
   height: auto;
   border: none;
   border-radius: 10px;
- 
 }
 
 .technologies p {
@@ -117,6 +116,16 @@ a {
   font-weight: bold;
 }
 
+.textarea {
+  width: 450px;
+  height: 100px;
+  margin-top: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 2px 6px rgb(180, 180, 180);
+}
+
 .button {
   background-color: black;
   color: white;
@@ -127,14 +136,19 @@ a {
   cursor: pointer;
 }
 
-.button-project{
+.button-project {
   display: flex;
   justify-content: center;
   margin-top: 10px;
   gap: 5px;
 }
 
-.button-project .button{
+.button-div {
+  margin-left: 350px;
+  margin-top: 10px;
+}
+
+.button-project .button {
   background-color: black;
   color: white;
   font-size: 20px;
@@ -143,4 +157,72 @@ a {
   padding: 10px 20px;
   cursor: pointer;
   width: 100%;
+}
+
+.logo {
+  width: 45px;
+  height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .selectinput {
+    width: 90%;
+  }
+
+  .input input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 6px rgb(180, 180, 180);
+  }
+
+  .form-input {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .button-div {
+    margin: 0;
+  }
+
+  .input-date {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .textarea {
+    width: 250px;
+    height: 100px;
+    margin-top: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 2px 6px rgb(180, 180, 180);
+  }
+
+  .checkbox-form {
+    flex-direction: column;
+    padding: 10px;
+    gap: 2px;
+  }
+
+  .item-check {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

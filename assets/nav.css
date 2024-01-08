@@ -1,37 +1,80 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
-a{
-    text-decoration: none  
+a {
+  text-decoration: none;
 }
 
-.nav{
-    display: flex;
-    margin: auto;
-    padding: 20px;
-    width: 85%;
-    justify-content: space-between;
+.nav {
+  display: flex;
+  margin: auto;
+  padding: 20px;
+  width: 85%;
+  justify-content: space-between;
 }
 
-.nav ul{
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    list-style: none;
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  list-style: none;
 }
-.nav ul li a{
-    font-size: 20px;
-    color: black;
+.nav ul li a {
+  font-size: 20px;
+  color: black;
 }
 
-.button {
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    cursor: pointer;
+.button-contact {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.hamburger-navbar-container {
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+}
+
+.hamburger-navbar-link {
+  display: none;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  border: 1px solid white;
+}
+
+#hamburger-button {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .nav ul .list-item {
+    display: none;
   }
+
+  .button-contact {
+    display: none;
+  }
+
+  .hamburger-navbar-link {
+    display: block;
+  }
+
+  #hamburger-button {
+    display: block;
+  }
+}

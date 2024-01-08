@@ -22,15 +22,22 @@
               height="40px"
             />
           </a>
-          <li><a href="#" style="font-weight: bold;">Home</a></li>
-          <li><a href="project.html">My Project</a></li>
+          <li class="list-item"><a href="#" style="font-weight: bold;">Home</a></li>
+          <li class="list-item"><a href="project.html">My Project</a></li>
         </ul>
         <a href="form.html">
-          <button class="button">
+          <button class="button-contact">
             Contact
           </button>
         </a>  
+          <i class="fa-solid fa-bars fa-2x" style="cursor: pointer;" id="hamburger-button" onclick="openHamburger()"></i> 
       </nav>
+
+      <div id="hamburger-navbar-container" class="hamburger-navbar-container hidden">
+        <a class="hamburger-navbar-link" style="background-color: orangered;" href="#">Home</a>
+        <a class="hamburger-navbar-link" href="project.html">My Project</a>
+        <a class="hamburger-navbar-link" href="form.html">Contact</a>
+      </div>
     </div>
    
     <div class="container">
@@ -117,6 +124,7 @@
         </div>
       </div>
     </div>
-
+    <script src="./assets/js/nav.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
   </body>
 </html>
