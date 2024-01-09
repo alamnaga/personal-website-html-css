@@ -1,68 +1,77 @@
-class Testimonial{
+const testimonials = [
+    {
+        name: "Alam",
+        message: "Mantap kerjaan oke",
+        image: "https://images.pexels.com/photos/11215484/pexels-photo-11215484.jpeg?cs=srgb&dl=pexels-caique-araujo-11215484.jpg&fm=jpg",
+        pekerjaan: "Data Science",
+        rating: 3
+    },
+    {
+        name: "Dian Sastro",
+        message: "Keren saya suka",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReQUn4vpNQFnFrnHh0m5FMW4T1oL2x_SPMNoxKWl7LesZpXw8nWmet7cZFjyqWXipyHJE&usqp=CAU",
+        pekerjaan: "Dosen",
+        rating: 4,
+    },
+    {
+        name: "Lia",
+        message: "Keren",
+        image: "https://images.pexels.com/photos/4820355/pexels-photo-4820355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        pekerjaan: "Guru",
+        rating: 3,
+    },
+    {
+        name: "Dia saya cinta",
+        message: "Keren makasih udah bantu",
+        image: "https://images.pexels.com/photos/17832908/pexels-photo-17832908/free-photo-of-wanita-tanah-pertanian-berbohong-pedesaan.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        pekerjaan: "Tes",
+        rating: 1
+    },
+    
+]
 
-    #name = "";
-    #image = "";
-    #pekerjaan = "";
-    #message = "";
-
-    constructor(name, image,pekerjaan, message){
-        this.name = name;
-        this.image = image;
-        this.pekerjaan = pekerjaan;
-        this.message = message;
-    }
-
-    set name(val){
-        this.#name = val;
-    }
-    set image(val){
-        this.#image = val;
-    }
-    set pekerjaan(val){
-        this.#pekerjaan = val;
-    }
-    set message(val){
-        this.#message = val;
-    }
-    get name(){
-        return this.#name;
-    }
-    get image(){
-        return this.#image;
-    }
-    get pekerjaan(){
-        return this.#pekerjaan;
-    }
-    get message(){
-        return this.#message;
-    }
-
-    html(){
+function allTestimonial(){
+    const testimonialHTML = testimonials.map((testimonial) => {
         return `                <div class="card-project">
         <div>
-            <img src="${this.image}" alt="download" width="300px" height="250px">
+            <img src="${testimonial.image}" alt="download" width="300px" height="250px">
         </div>
         <div>
-            <h3>${this.name}</h3>
-            <p>${this.pekerjaan}</p>
+            <h3>${testimonial.name}</h3>
+            <p>${testimonial.pekerjaan}</p>
             <div style="margin-top: 10px;">
-                <p>${this.message}</p>
+                <p>${testimonial.message}</p>
+                <p>Rating:${testimonial.rating}</p>
             </div>
            
         </div>
         
     </div>`
-    }
+    }) 
+
+    document.getElementById('testimonials').innerHTML = testimonialHTML.join('')
 }
 
-const testimoni1 = new Testimonial("Hafidh","https://cdn.pixabay.com/photo/2023/08/20/09/25/ai-generated-8202042_960_720.jpg","Fullstack Developer","Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae. ");
-const testimoni2 = new Testimonial("Alam","https://cdn.pixabay.com/photo/2022/09/29/17/15/halloween-7487706_960_720.jpg","Mobile Developer","Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, quae. ");
-
-const testimonials = [testimoni1, testimoni2];
-
-let testimonialHTML = "";
-
-for(let i = 0; i < testimonials.length; i++){
-    testimonialHTML += testimonials[i].html();
+function filterTestimonial(rating){
+    const filter = testimonials.filter((testimonial) => testimonial.rating === rating)
+    const filterHTML = filter.map(( testimonial) => {
+        return `                <div class="card-project">
+        <div>
+            <img src="${ testimonial.image}" alt="download" width="300px" height="250px">
+        </div>
+        <div>
+            <h3>${ testimonial.name}</h3>
+            <p>${ testimonial.pekerjaan}</p>
+            <div style="margin-top: 10px;">
+                <p>${ testimonial.message}</p>
+                <p>Rating:${testimonial.rating}</p>
+            </div>
+           
+        </div>
+        
+    </div>`
+    })
+    document.getElementById('testimonials').innerHTML = filterHTML.join('')
 }
-document.getElementById("testimonials").innerHTML = testimonialHTML
+
+allTestimonial()
