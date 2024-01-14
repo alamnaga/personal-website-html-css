@@ -1,118 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/project.css">
     <link rel="stylesheet" href="./assets/nav.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Contact</title>
 </head>
-<body>
-    <div style="background-color:rgb(248, 248, 248);">
-        <nav class="nav">
-            <ul>
-              <a
-              href="#"
-              target="_blank"
-              >
-                <img
-                  src="./assets/icon/du.png"
-                  alt="download"
-                  width="45px"
-                  height="40px"
-                />
-              </a>
-              <li class="list-item"><a href="index.html" >Home</a></li>
-              <li class="list-item"><a href="#" style="font-weight: bold;">My Project</a></li>
-              <li class="list-item"><a href="testimonial.html" >Testimonial</a></li>
-            </ul>
-            <a href="form.html">
-              <button class="button-contact">
-                Contact
-              </button>
-            </a>  
-              <i class="fa-solid fa-bars fa-2x" style="cursor: pointer;" id="hamburger-button" onclick="openHamburger()"></i> 
-          </nav>
 
-          <div id="hamburger-navbar-container" class="hamburger-navbar-container hidden">
+<body>
+    <div class="bg-light p-2">
+        <nav class="container navbar navbar-expand-sm navbar-light">
+            <div class="container-fluid">
+                <a href="index.html">
+                    <img src="./assets/icon/du.png" alt="download" width="45px" height="40px" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Add My Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="testimonial.html">Testimonial</a>
+                        </li>
+                    </ul>
+                    <a href="form.html">
+                        <button class="btn btn-dark">
+                            Contact
+                        </button>
+                    </a>
+                </div>
+                <i class="fa-solid fa-bars fa-2x" style="cursor: pointer;" id="hamburger-button"
+                    onclick="openHamburger()">
+                </i>
+            </div>
+        </nav>
+
+        <div id="hamburger-navbar-container" class="hamburger-navbar-container hidden">
             <a class="hamburger-navbar-link" href="index.html">Home</a>
-            <a class="hamburger-navbar-link" style="background-color: orangered;" href="#">My Project</a>
+            <a class="hamburger-navbar-link" href="#" style="background-color: orangered;" >Add My Project</a>
             <a class="hamburger-navbar-link" href="testimonial.html">Testimonial</a>
             <a class="hamburger-navbar-link" href="form.html">Contact</a>
-          </div>
+        </div>
     </div>
 
-    <div class="container">
-        <div class="card" style="background-color: #d4d4d4">
-            <h1>
-                ADD MY PROJECT
-            </h1>
-            <form onsubmit="addProject(event)">
-                <div class="input">
-                    <label for="name">Project Name</label>
-                    <input id="name" type="text" placeholder="Name" id="name">
-                </div>
-                <div class="form-input">
-                    <div class="input input-date">
-                        <label for="start-date">Start Date</label>
-                        <input id="start-date" type="date" placeholder="Start Date" id="start-date">
+    <div style=" background-color: #d4d4d4">
+        <div class="container">
+            <div class="card" style="border: none; background-color: #d4d4d4">
+                <h1 class="fw-bold">
+                    ADD MY PROJECT
+                </h1>
+                <form onsubmit="addProject(event)">
+                    <div>
+                        <label for="name">Project Name</label>
+                        <input id="name" type="text" placeholder="Name" id="name" class="form-control">
                     </div>
-                    <div class="input input-date">
-                        <label for="end-date">End Date</label>
-                        <input id="end-date" type="date" placeholder="End Date" id="end-date">
-                    </div>
-                </div>
-                
-                <div class="input">
-                    <label for="phone">Description</label>
-                    <textarea class="textarea" name="desc" id="desc"></textarea>      
-                </div>
-                
-                <div class="input-check">
-                    <label for="technologies">Technologies</label>
-                    <div class="checkbox-form">
-                        <div class="item-check">
-                            <div>
-                                <input type="checkbox" id="html" name="technologies" value="html">
-                                <label for="html">HTML</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="react" name="technologies" value="react">
-                                <label for="react">React JS</label>
-                            </div>
+                    <div class="row mt-2">
+                        <div class="col mt-2">
+                            <label for="start-date">Start Date</label>
+                            <input id="start-date" type="date" placeholder="Start Date" id="start-date" class="form-control">
                         </div>
-                        <div class="item-check">
-                            <div>
-                                <input type="checkbox" id="css" name="technologies" value="css">
-                                <label for="css">CSS</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="javascript" name="technologies" value="javascript">
-                                <label for="javascript">JavaScript</label>
-                            </div>
+                        <div class="col mt-2">
+                            <label for="end-date">End Date</label>
+                            <input id="end-date" type="date" placeholder="End Date" id="end-date" class="form-control">
                         </div>
-                    
                     </div>
-                </div>
-                
-                <div class="input">
-                    <label for="upload-image">Upload Image</label>
-                    <input style="background-color: #fff;" type="file" id="upload-image" name="upload-image">
-                </div>
-                
-                <div class="button-div">
-                    <button class="button">
-                        Submit
-                    </button>
-                </div>
-            </form>
-        </div> 
-        
-        <div style="background-color:rgb(248, 248, 248);" id="contents">
-            <div class="card">
-                <h1>My Project</h1>
+    
+                    <div class="mt-2">
+                        <label for="phone">Description</label>
+                        <textarea class="form-control" name="desc" id="desc"></textarea>
+                    </div>
+                    <label for="technologies" class="mt-2">Technologies</label>
+                    <div class="form-check">
+                        <div class="checkbox-form">
+                            <div class="item-check">
+                                <div>
+                                    <input type="checkbox" id="html" name="technologies" value="html">
+                                    <label for="html">HTML</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="react" name="technologies" value="react">
+                                    <label for="react">React JS</label>
+                                </div>
+                            </div>
+                            <div class="item-check">
+                                <div>
+                                    <input type="checkbox" id="css" name="technologies" value="css">
+                                    <label for="css">CSS</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="javascript" name="technologies" value="javascript">
+                                    <label for="javascript">JavaScript</label>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                    <div class="mt-2">
+                        <label for="upload-image" class="form-label">Upload Image</label>
+                        <input style="background-color: #fff;" type="file" id="upload-image" name="upload-image"
+                        class="form-control">
+                    </div>
+    
+                    <div class="mt-3">
+                        <button class="btn btn-dark float-end">
+                            Submit
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div id="project-content" class="list-project">
+        </div>
+
+        <div class="card" id="contents" style="border: none;">
+            <div>
+                <h1 class="fw-bold">My Project</h1>
+            </div>
+            <div id="project-content" class="d-flex flex-wrap justify-content-center">
                 <!-- dynamic content -->
                 <!-- <div class="card-project">
                     <div>
@@ -140,4 +150,5 @@
     <script src="./assets/js/project.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
+
 </html>

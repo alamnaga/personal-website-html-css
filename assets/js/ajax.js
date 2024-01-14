@@ -27,16 +27,19 @@ async function allTestimonial() {
   const testimonials = await getTestimoniData();
 
   const testimonialHTML = testimonials.map((testimonial) => {
-    return `                <div class="card-project">
-        <div>
-            <img src="${testimonial.image}" alt="download" width="300px" height="250px">
+    return `                <div class="d-flex flex-column p-4 m-4" style=" width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);";>
+        <div class="mb-3">
+            <img src="${testimonial.image}" alt="download" width="300px" height="250px" style="border-radius: 8px;">
         </div>
         <div>
-            <h3>${testimonial.name}</h3>
-            <p>${testimonial.pekerjaan}</p>
+            <h3 class="fw-bold">${testimonial.name}</h3>
+            <strong>Pekerjaan: ${testimonial.pekerjaan}</strong>
             <div style="margin-top: 10px;">
                 <p>${testimonial.message}</p>
-                <p>Rating:${testimonial.rating}</p>
+                <p>Rating: ${testimonial.rating}</p>
             </div>
            
         </div>
@@ -53,16 +56,19 @@ async function filterTestimonial(rating) {
     (testimonial) => testimonial.rating === rating
   );
   const filterHTML = filter.map((testimonial) => {
-    return `                <div class="card-project">
-        <div>
-            <img src="${testimonial.image}" alt="download" width="300px" height="250px">
+    return `                               <div class="d-flex flex-column p-4 m-4" style=" width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);";>
+        <div class="mb-3">
+            <img src="${testimonial.image}" alt="download" width="300px" height="250px" style="border-radius: 8px;">
         </div>
         <div>
-            <h3>${testimonial.name}</h3>
-            <p>${testimonial.pekerjaan}</p>
+            <h3 class="fw-bold">${testimonial.name}</h3>
+            <strong>Pekerjaan: ${testimonial.pekerjaan}</strong>
             <div style="margin-top: 10px;">
                 <p>${testimonial.message}</p>
-                <p>Rating:${testimonial.rating}</p>
+                <p>Rating: ${testimonial.rating}</p>
             </div>
            
         </div>

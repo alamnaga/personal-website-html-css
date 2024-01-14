@@ -11,11 +11,6 @@ a {
   text-decoration: none;
 }
 
-.container {
-  margin: 0 auto;
-  width: 100%;
-  height: 60%;
-}
 
 .card {
   align-items: center;
@@ -25,48 +20,8 @@ a {
   padding: 50px;
 }
 
-input {
-  margin-top: 5px;
-  padding: 10px;
-  width: 450px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 1px 2px 6px rgb(180, 180, 180);
-}
 
-.selectinput {
-  width: 470px;
-  height: 40px;
-  background-color: #fff;
-  margin-top: 5px;
-  padding: 10px;
-  border: none;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 1px 2px 6px rgb(180, 180, 180);
-}
 
-.input {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.button-div {
-  margin-left: 350px;
-}
-
-.textarea {
-  width: 450px;
-  height: 100px;
-  margin-top: 5px;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 1px 2px 6px rgb(180, 180, 180);
-}
 
 .button {
   background-color: black;
@@ -78,61 +33,4 @@ input {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    width: 100%;
-  }
 
-  .card {
-    width: 90%;
-  }
-
-  .selectinput {
-    width: 90%;
-  }
-
-  .button-div {
-    margin-left: 0;
-  }
-
-  .input {
-    width: 80%;
-  }
-
-  input {
-    width: 87%;
-  }
-
-  
-}
-
-@media screen and (max-width: 480px) {
-  .container {
-    width: 100%;
-  }
-
-  .card {
-    width: 90%;
-  }
-
-  .selectinput {
-    width: 90%;
-  }
-
-  .button {
-    display: flex;
-    justify-content: center;
-  }
-
-  .textarea{
-    width: 80%;
-  }
-
-  .input {
-    width: 80%;
-  }
-
-  input {
-    width: 83%;
-  }
-}
