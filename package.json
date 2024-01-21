@@ -1,0 +1,27 @@
+{
+  "name": "task1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alamnaga/personal-website-html-css.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alamnaga/personal-website-html-css/issues"
+  },
+  "homepage": "https://github.com/alamnaga/personal-website-html-css#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "hbs": "^4.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
