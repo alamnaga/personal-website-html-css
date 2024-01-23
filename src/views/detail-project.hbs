@@ -52,8 +52,7 @@
   <div class="container">
     <div>
       <h1 class="text-center fw-bold my-4">
-        {{ data.name }}
-      </h1>
+        {{data.name}}
     </div>
     <div class="d-flex flex-column flex-md-row justify-content-lg-between">
       <div>
@@ -62,7 +61,7 @@
       <div class="w-25 ms-5">
         <div class="d-flex flex-column">
           <h2 class="fw-bold">Duration</h2>
-          <p class="fs-5"><i class="fas fa-calendar-week me-2"></i>{{data.startDate}} - {{data.endDate}}</p>
+          <p class="fs-5"><i class="fas fa-calendar-week me-2"></i>{{data.start_date}} - {{data.end_date}}</p>
           <p class="fs-5"><i class="far fa-clock me-2"></i>{{data.duration}}</p>
         </div>
         <div>
@@ -79,7 +78,7 @@
       </div>
     </div>
     <div class="card" style="border: none;">
-      <p>{{data.desc}}</p>
+      <p>{{data.description}}</p>
     </div>
   </div>
   <script src="../assets/js/nav.js"></script>
