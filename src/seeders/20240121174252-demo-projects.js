@@ -12,7 +12,8 @@ module.exports = {
         technologies: ['css'],
         image: 'tes1.jpg',
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
+        author: null
       },
       {
         name: 'Project 2',
@@ -22,9 +23,9 @@ module.exports = {
         technologies: ['html'],
         image: 'tes2.jpg',
         createdAt: new Date(),
-        updatedAt: new Date()
+        updatedAt: new Date(),
+        author: null
       },
-      // Add more sample data as needed
     ], {});
   },
 

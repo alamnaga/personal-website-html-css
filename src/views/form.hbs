@@ -24,17 +24,44 @@
                             <a class="nav-link" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/add-project">Add My Project</a>
+                            <a class="nav-link" href="/add-project">
+                            {{#if isLogin}}
+                            Add My Project
+                            {{else}}
+                            My Project
+                            {{/if}}
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/testimoni">Testimonial</a>
                         </li>
                     </ul>
-                    <a href="#">
+                    <div>
+                     {{#if isLogin}}
+                    <a href="#" class="me-3 fw-bold text-danger" style="text-decoration: none;">Hello, {{user}}</a>
+                    <a href="/logout" style="text-decoration: none;">
+                        <button class="btn btn-danger">
+                            Logout
+                        </button>
+                    </a>
+                    {{else}}
+                    <a href="/register" style="text-decoration: none;">
+                        <button class="btn btn-danger">
+                            Register
+                        </button>
+                    </a>
+                    <a href="/login" class="me-3" style="text-decoration: none;">
+                        <button class="btn btn-outline-danger">
+                            Login
+                        </button>
+                    </a>
+                    {{/if}}
+                    <a href="#" style="text-decoration: none;">
                         <button class="btn btn-dark">
                             Contact
                         </button>
                     </a>
+                   </div>
                 </div>
                 <i class="fa-solid fa-bars fa-2x" style="cursor: pointer;" id="hamburger-button"
                     onclick="openHamburger()">
@@ -46,6 +73,8 @@
             <a class="hamburger-navbar-link" href="/">Home</a>
             <a class="hamburger-navbar-link" href="/add-project">Add My Project</a>
             <a class="hamburger-navbar-link" href="/testimoni">Testimonial</a>
+            <a class="hamburger-navbar-link" href="/register">Register</a>
+            <a class="hamburger-navbar-link" href="/login">Login</a>
             <a class="hamburger-navbar-link" href="#" style="background-color: orangered;">Contact</a>
         </div>
     </div>
