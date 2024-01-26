@@ -23,15 +23,13 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="/">Home</a>
                         </li>
+                        {{#if isLogin}}
                         <li class="nav-item">
                             <a class="nav-link" href="/add-project">
-                            {{#if isLogin}}
                             Add My Project
-                            {{else}}
-                            My Project
-                            {{/if}}
                             </a>
                         </li>
+                        {{/if}}
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Testimonial</a>
                         </li>
@@ -39,11 +37,8 @@
                     <div>
                      {{#if isLogin}}
                     <a href="#" class="me-3 fw-bold text-danger" style="text-decoration: none;">Hello, {{user}}</a>
-                    <a href="/logout" style="text-decoration: none;">
-                        <button class="btn btn-danger">
-                            Logout
-                        </button>
-                    </a>
+                    <a href="/logout" class="me-4 text-danger">
+                        Logout</a>
                     {{else}}
                     <a href="/register" style="text-decoration: none;">
                         <button class="btn btn-danger">
@@ -71,10 +66,16 @@
 
         <div id="hamburger-navbar-container" class="hamburger-navbar-container hidden">
             <a class="hamburger-navbar-link" href="/">Home</a>
+            {{#if isLogin}}
             <a class="hamburger-navbar-link" href="/add-project">Add My Project</a>
+            {{/if}}
             <a class="hamburger-navbar-link" href="#" style="background-color: orangered;">Testimonial</a>
+             {{#if isLogin}}
+            <a class="hamburger-navbar-link" href="/logout">Logout</a>
+            {{else}}
             <a class="hamburger-navbar-link" href="/register">Register</a>
-            <a class="hamburger-navbar-link" href="/login">Login</a>
+            <a class="hamburger-navbar-link" href="/Login">Login</a>
+            {{/if}}
             <a class="hamburger-navbar-link" href="/contact">Contact</a>
         </div>
     </div>

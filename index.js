@@ -57,11 +57,36 @@ app.post("/login", handleLogin);
 const data = [];
 // console.log(SequelizePool);
 
-function home(req, res) {
-  res.render("index", {
-    isLogin: req.session.isLogin,
-    user: req.session.user,
-  });
+async function home(req, res) {
+  const addTitle = "Home";
+
+  try {
+    const query = await SequelizePool.query(
+      `SELECT projects.id, projects.name AS name, start_date, end_date, description, technologies, image, projects."createdAt", projects."updatedAt", users.name AS author_name FROM projects LEFT JOIN users ON projects.author = users.id`,
+      {
+        type: QueryTypes.SELECT,
+      }
+    );
+    const data = query.map((res) => ({
+      ...res,
+      duration: duration(res.start_date, res.end_date),
+      techArray: techToIcon(res.technologies),
+    }));
+    // console.log("INI APA WOY:", data.map(item => ({ startDate: item.startDate, endDate: item.endDate })));
+    console.log(data);
+    console.log({ iduser: req.session.idUser });
+
+
+    res.render("index", {
+      data,
+      addTitle,
+      isLogin: req.session.isLogin,
+      user: req.session.user,
+      iduser: req.session.idUser
+    });
+  } catch (error) {
+    throw error;
+  }
 }
 
 function contact(req, res) {
@@ -115,41 +140,12 @@ function techToIcon(technologies) {
 
 async function addProject(req, res) {
   const addTitle = "Add Project";
-
-  // data.forEach((item) => {
-  //   // item.techArray = techToIcon(item.technologies);
-  //   item.duration = duration(item.startDate, item.endDate);
-  // });
-
-  // res.render("project", { data, addTitle });
-
-  try {
-    const query = await SequelizePool.query(
-      `SELECT projects.id, projects.name AS name, start_date, end_date, description, technologies, image, projects."createdAt", projects."updatedAt", users.name AS author_name FROM projects LEFT JOIN users ON projects.author = users.id`,
-      {
-        type: QueryTypes.SELECT,
-      }
-    );
-    const data = query.map((res) => ({
-      ...res,
-      duration: duration(res.start_date, res.end_date),
-      techArray: techToIcon(res.technologies),
-    }));
-    // console.log("INI APA WOY:", data.map(item => ({ startDate: item.startDate, endDate: item.endDate })));
-    console.log(data);
-    console.log({ iduser: req.session.idUser });
-
-
-    res.render("project", {
-      data,
-      addTitle,
-      isLogin: req.session.isLogin,
-      user: req.session.user,
-      iduser: req.session.idUser
-    });
-  } catch (error) {
-    throw error;
-  }
+  res.render("project", {
+    data,
+    addTitle,
+    isLogin: req.session.isLogin,
+    user: req.session.user,
+  });
 }
 
 async function projectDetail(req, res) {
@@ -204,21 +200,7 @@ async function projectDetail(req, res) {
 }
 
 async function handlePostProject(req, res) {
-  // const { name, startDate, endDate, desc, technologies } = req.body;
-
-  // const technologiesArray = Array.isArray(technologies)
-  //   ? technologies
-  //   : [technologies];
-
-  // data.unshift({
-  //   name,
-  //   startDate,
-  //   endDate,
-  //   desc,
-  //   // technologies: technologiesArray,
-  //   techArray: techToIcon(technologiesArray),
-  // });
-
+ 
   try {
     const { name, startDate, endDate, desc, technologies } = req.body;
     const image = req.file.filename;
@@ -237,7 +219,7 @@ async function handlePostProject(req, res) {
     );
 
     console.log(query);
-    res.redirect("/add-project");
+    res.redirect("/");
   } catch (error) {
     throw error;
   }
@@ -267,7 +249,7 @@ async function handleEditProject(req, res) {
       }
     );
     // console.log(query);
-    res.redirect("/add-project");
+    res.redirect("/");
   } catch (error) {
     throw error;
   }
